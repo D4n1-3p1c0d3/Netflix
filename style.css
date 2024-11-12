@@ -1,0 +1,59 @@
+body {
+    background-color: #141414;
+    color: #fff;
+}
+
+.movie-row {
+    white-space: nowrap;
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;  /* Cambiato da overflow-x: auto */
+}
+
+.movie-card {
+    display: inline-block;
+    min-width: 300px;
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    cursor: grab;
+}
+
+.movie-slider.dragging {
+    cursor: grabbing;
+    transition: none;
+}
+
+.navigation-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 20px 10px;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.movie-row:hover .navigation-button {
+    opacity: 1;
+}
+
+.prev-button {
+    left: 0;
+}
+
+.next-button {
+    right: 0;
+}
